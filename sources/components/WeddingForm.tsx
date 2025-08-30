@@ -1,14 +1,12 @@
-"use client" // Reactフックを使用するため宣言
+"use client" 
 
 import type React from "react"
 import { useState } from "react"
 
-// 必須タグ
 const RequiredTag = () => (
   <span className="border border-[#F99D8C] text-[#F99D8C] text-xs font-semibold px-2 py-0.5 rounded-sm">必須</span>
 )
 
-// 任意タグ
 const OptionalTag = () => (
   <span className="border border-[#DDDDDD] text-gray-400 text-xs font-semibold px-2 py-0.5 rounded-sm">任意</span>
 )
@@ -48,7 +46,7 @@ const TextInput = ({
 )
 
 const WeddingForm = () => {
-  const [guestType, setGuestType] = useState("bride")
+  const [guestType, setGuestType] = useState("groom")
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const [formData, setFormData] = useState({
@@ -67,38 +65,32 @@ const WeddingForm = () => {
   const validateForm = () => {
     const newErrors: Record<string, string> = {}
 
-    // 名前の検証
     if (!formData.name.trim()) {
       newErrors.name = "お名前を入力してください"
     }
 
-    // ふりがな検証
     if (!formData.furigana.trim()) {
       newErrors.furigana = "ふりがなを入力してください"
     } else if (!/^[ぁ-ん\s]+$/.test(formData.furigana)) {
       newErrors.furigana = "ふりがなはひらがなで入力してください"
     }
 
-    // 郵便番号検証
     if (!formData.zipCode.trim()) {
       newErrors.zipCode = "郵便番号を入力してください"
     } else if (!/^\d{7}$/.test(formData.zipCode)) {
       newErrors.zipCode = "郵便番号は7桁の数字で入力してください（例：1234567）"
     }
 
-    // 住所の検証
     if (!formData.address.trim()) {
       newErrors.address = "住所を入力してください"
     }
 
-    // 電話番号検証
     if (!formData.phone.trim()) {
       newErrors.phone = "電話番号を入力してください"
     } else if (!/^(0\d{1,4}-\d{1,4}-\d{4}|0\d{9,10})$/.test(formData.phone)) {
       newErrors.phone = "正しい電話番号を入力してください（例：090-1234-5678）"
     }
 
-    // メールアドレス検証
     if (formData.email && !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)) {
       newErrors.email = "正しいメールアドレスを入力してください"
     }
@@ -111,7 +103,6 @@ const WeddingForm = () => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
 
-    // 入力開始時にエラーを消す
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }))
     }
@@ -139,7 +130,7 @@ const WeddingForm = () => {
 
   return (
     <section className="text-[#202F55] p-4 md:p-8 max-w-2xl mx-auto">
-      <h2 className="text-center text-4xl md:text-5xl font-thin mb-12">Wedding Invitation</h2>
+      <h2 className="text-center text-4xl md:text-5xl font-thin mb-12 mt-8">Wedding Invitation</h2>
 
       <form onSubmit={handleSubmit}>
         <div className="space-y-10">
@@ -333,7 +324,7 @@ const WeddingForm = () => {
             ></textarea>
           </div>
 
-          <div className="pt-8">
+          <div className="pt-8 mb-10">
             <button
               type="submit"
               disabled={isSubmitting}
