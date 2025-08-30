@@ -1,18 +1,25 @@
 @keyframes swim {
   0% {
     right: -200px;
-  }
-  100% {
-    right: 800px;
-  }
-}
-
-@keyframes wiggle {
-  0% {
+    bottom: 50px;
     transform: rotate(5deg);
   }
-  100% {
+  25% {
+    bottom: 70px;
     transform: rotate(-5deg);
+  }
+  50% {
+    bottom: 50px;
+    transform: rotate(5deg);
+  }
+  75% {
+    bottom: 70px;
+    transform: rotate(-5deg);
+  }
+  100% {
+    right: 100%;
+    bottom: 50px;
+    transform: rotate(5deg);
   }
 }
 
@@ -20,6 +27,6 @@
   animation: swim 10s linear infinite;
 }
 
-.animate-wiggle {
+/* .animate-wiggle {
   animation: wiggle 0.3s ease-in-out infinite alternate;
-}
+} */
