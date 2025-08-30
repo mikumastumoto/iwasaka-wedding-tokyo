@@ -44,12 +44,12 @@ export default function Countdown() {
         <div className="mt-5 pb-6">
           {/* Days with palms */}
           <div className="flex justify-center items-center gap-[10%]">
-            <Image src="/images/palm3.png" alt="palm-left" width={40} height={40} />
+            <Image src="./images/palm3.png" alt="palm-left" width={40} height={40} />
             <div>
               <div className="text-[80px] text-center leading-[1] mt-5">{timeLeft.days}</div>
               <div className="text-[24px] text-center leading-[1]">days</div>
             </div>
-            <Image src="/images/palm3.png" alt="palm-right" width={40} height={40} />
+            <Image src="./images/palm3.png" alt="palm-right" width={40} height={40} />
           </div>
 
           {/* Hours, Minutes, Seconds */}

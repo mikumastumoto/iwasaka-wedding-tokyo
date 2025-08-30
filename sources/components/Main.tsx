@@ -37,7 +37,7 @@ export default function MainSection() {
       {/* パーム画像 */}
       {/* 768px以上: PC用 */}
       <Image
-        src="/images/pc-palms.png"
+        src="./images/pc-palms.png"
         alt="palms"
         className="hidden md:block absolute bottom-0 w-full object-contain"
         width={0}
@@ -46,7 +46,7 @@ export default function MainSection() {
       />
       {/* 768px未満: スマホ用 */}
       <Image
-        src="/images/palms.png"
+        src="./images/palms.png"
         alt="palms"
         className="block md:hidden absolute bottom-0 w-full object-contain"
         width={0}
@@ -59,7 +59,7 @@ export default function MainSection() {
         <div className="relative w-full h-[300px] overflow-hidden">
           <Image
             id="turtle"
-            src="/images/honu.png"
+            src="./images/honu.png"
             alt="honu"
             className="absolute bottom-[50px] right-[-200px] w-[150px] animate-swim animate-wiggle"
             width={150}

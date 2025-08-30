@@ -297,7 +297,7 @@ const WeddingForm = () => {
                     }`}
                 >
                   <Image
-                    src="/images/arrow1.png"
+                    src="./images/arrow1.png"
                     alt="arrow"
                     width={10}
                     height={10}

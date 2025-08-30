@@ -13,7 +13,7 @@ export default function Profile() {
                         <div className="flex justify-center items-center gap-[60px]">
                             {/* 画像 */}
                             <Image
-                                src="/images/honu.png"
+                                src="./images/honu.png"
                                 alt="turtle"
                                 width={50}
                                 height={50}
@@ -27,7 +27,7 @@ export default function Profile() {
 
                                 {/* 装飾アイコン */}
                                 <Image
-                                    src="/images/honu.png"
+                                    src="./images/honu.png"
                                     alt="turtle"
                                     width={20}
                                     height={20}
@@ -56,7 +56,7 @@ export default function Profile() {
                         <div className="flex justify-center items-center gap-[60px]">
                             {/* 画像 */}
                             <Image
-                                src="/images/honu.png"
+                                src="./images/honu.png"
                                 alt="turtle"
                                 width={50}
                                 height={50}
@@ -70,7 +70,7 @@ export default function Profile() {
 
                                 {/* 装飾アイコン */}
                                 <Image
-                                    src="/images/honu.png"
+                                    src="./images/honu.png"
                                     alt="turtle"
                                     width={20}
                                     height={20}

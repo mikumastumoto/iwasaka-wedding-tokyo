@@ -8,7 +8,7 @@ const Message = () => {
         {/* 左側の画像 */}
         <div className="w-full md:w-1/2">
           <Image
-            src="/images/message.JPEG"
+            src="./images/message.JPEG"
             alt="bride"
             width={800}
             height={600}
