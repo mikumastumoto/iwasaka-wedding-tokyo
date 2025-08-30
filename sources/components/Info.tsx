@@ -3,7 +3,7 @@
 const Info = () => {
   return (
     // 背景色、文字色、フォント、中央寄せ、パディングを設定
-    <div className="bg-[#202F55] text-[#FEF8F2] font-sans text-center px-5 py-16">
+    <div className="bg-[#202F55] text-[#FEF8F2] text-center px-5 py-16">
       
       {/* メインタイトル */}
       <h2 className="text-5xl font-light tracking-wider mb-12 font-thin">
@@ -27,7 +27,7 @@ const Info = () => {
         <div className="inline-block border border-[#FEF8F2] px-8 py-2 mb-6">
           <h3 className="text-2xl font-thin">Location</h3>
         </div>
-        <h4 className="text-2xl mt-6 mb-2.5 font-thin">
+        <h4 className="text-2xl mt-4 mb-2.5 font-thin">
           IWAI OMOTESANDO
         </h4>
         <a 

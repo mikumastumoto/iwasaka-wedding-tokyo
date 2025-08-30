@@ -138,7 +138,7 @@ const WeddingForm = () => {
   }
 
   return (
-    <section className="text-[#202F55] font-sans p-4 md:p-8 max-w-2xl mx-auto">
+    <section className="text-[#202F55] p-4 md:p-8 max-w-2xl mx-auto">
       <h2 className="text-center text-4xl md:text-5xl font-thin mb-12">Wedding Invitation</h2>
 
       <form onSubmit={handleSubmit}>

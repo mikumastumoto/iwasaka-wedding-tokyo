@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Profile() {
     return (
         <section className="bg-[#202f55] text-white py-16 px-6">
-            <h2 className="text-center text-4xl font-light mb-12">Profile</h2>
+            <h2 className="text-center text-4xl font-thin mb-12">Profile</h2>
 
             <div className="flex flex-col md:flex-row justify-center items-start gap-16">
                 {/* Groom */}
@@ -22,8 +22,8 @@ export default function Profile() {
 
                             <div>
                                 {/* 名前 */}
-                                <div className="text-3xl font-light text-center">Riku</div>
-                                <div className="text-xl mb-4 text-center">Groom</div>
+                                <div className="text-3xl font-thin text-center">Riku</div>
+                                <div className="text-xl mb-4 font-thin text-center">Groom</div>
 
                                 {/* 装飾アイコン */}
                                 <Image
@@ -65,8 +65,8 @@ export default function Profile() {
 
                             <div>
                                 {/* 名前 */}
-                                <div className="text-3xl font-light text-center">Miku</div>
-                                <div className="text-xl mb-4 text-center">Bride</div>
+                                <div className="text-3xl font-thin text-center">Miku</div>
+                                <div className="text-xl mb-4 font-thin text-center">Bride</div>
 
                                 {/* 装飾アイコン */}
                                 <Image
