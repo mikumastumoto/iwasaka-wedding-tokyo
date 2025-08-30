@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import Image from "next/image";
 
 const RequiredTag = () => (
@@ -44,6 +44,18 @@ const TextInput = ({
   </div>
 )
 
+const setCookie = (name: string, value: string, days: number) => {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString()
+  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`
+}
+
+const getCookie = (name: string) => {
+  return document.cookie.split("; ").reduce((acc, c) => {
+    const [key, v] = c.split("=")
+    return key === name ? decodeURIComponent(v) : acc
+  }, "")
+}
+
 const WeddingForm = () => {
   const [guestType, setGuestType] = useState("groom")
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -67,6 +79,15 @@ const WeddingForm = () => {
 
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [companionsOpen, setCompanionsOpen] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+
+  useEffect(() => {
+    const done = getCookie("wedding_submitted")
+    if (done === "true") {
+      setSubmitted(true)
+    }
+  }, [])
+
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {}
@@ -106,7 +127,6 @@ const WeddingForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!validateForm()) return
     setIsSubmitting(true)
 
     try {
@@ -118,13 +138,13 @@ const WeddingForm = () => {
       })
 
       formData.companions.forEach((comp, i) => {
-        params.append(`companions[${i}][name]`, comp.name)
-        params.append(`companions[${i}][furigana]`, comp.furigana)
-        params.append(`companions[${i}][allergies]`, comp.allergies)
+        params.append(`companion${i + 1}_name`, comp.name)
+        params.append(`companion${i + 1}_furigana`, comp.furigana)
+        params.append(`companion${i + 1}_allergies`, comp.allergies)
       })
 
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxJ9EobRc4QpFQJztg57i0VVwIIsKVzI9Ks0_6jJSX2iJwqmhUFE2EoE6V0-FfXz8Z5FQ/exec",
+        "https://script.google.com/macros/s/AKfycbyLygsBtkSpnQXVtW_gYAznXVH_4JyawPwETuOFhT6E3aZR6A52Ov9mnwtiJZ9MPtiq/exec",
         {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -136,30 +156,27 @@ const WeddingForm = () => {
 
       if (result.status === "success") {
         alert("送信完了しました！")
-        setFormData({
-          name: "",
-          furigana: "",
-          zipCode: "",
-          address: "",
-          building: "",
-          phone: "",
-          email: "",
-          allergies: "",
-          companions: [
-            { name: "", furigana: "", allergies: "" },
-            { name: "", furigana: "", allergies: "" },
-            { name: "", furigana: "", allergies: "" },
-            { name: "", furigana: "", allergies: "" },
-          ],
-        })
-        setCompanionsOpen(false)
-      } else alert("送信失敗：" + result.message)
+        setSubmitted(true)
+        setCookie("wedding_submitted", "true", 365)
+      } else {
+        alert("送信失敗：" + result.message)
+      }
     } catch (err) {
       console.error(err)
       alert("送信エラーが発生しました")
     } finally {
       setIsSubmitting(false)
     }
+  }
+
+  if (submitted) {
+    // ✅ 送信済みUI
+    return (
+      <section className="text-[#202F55] p-8 max-w-2xl mx-auto text-center">
+        <h2 className="text-3xl font-thin mb-6">Wedding Invitation</h2>
+        <p className="text-lg">すでにお申し込み済みです。<br />ありがとうございます！</p>
+      </section>
+    )
   }
 
   return (
