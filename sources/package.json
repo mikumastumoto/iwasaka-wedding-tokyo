@@ -2,6 +2,7 @@
   "name": "iwasaka-tokyo-wedding-site",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mikumastumoto.github.io/iwasaka-wedding-tokyo/",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
