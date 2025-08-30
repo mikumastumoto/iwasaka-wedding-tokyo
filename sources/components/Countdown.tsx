@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Countdown() {
-  const targetDate = new Date("2025-08-31T21:55:00");
+  const targetDate = new Date("2025-11-23T18:00:00");
 
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -69,7 +69,7 @@ export default function Countdown() {
           </div>
 
           {/* Target Date */}
-          <div className="mt-5 text-[12px]">To 2025.08.31 21:55</div>
+          <div className="mt-5 text-[12px]">To 2025-11-23T18:00:00</div>
         </div>
       </div>
     </section>
