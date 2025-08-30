@@ -2,9 +2,6 @@ FROM node:20.11.0
 
 WORKDIR /usr/src/app
 
-# Gitユーザー設定
-RUN git config --global user.name "mikumastumoto" && git config --global user.email "mm39bsk@gmail.com"
-
 # package.json と package-lock.json をコピー
 COPY package*.json ./
 
