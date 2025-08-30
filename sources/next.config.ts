@@ -1,7 +1,11 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+// next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "export", // 静的エクスポート
+  images: {
+    unoptimized: true, // GitHub Pages では必須
+  },
+  basePath: "/iwasaka-wedding-tokyo", // ← GitHubリポジトリ名に合わせる
 };
 
-export default nextConfig;
+module.exports = nextConfig;

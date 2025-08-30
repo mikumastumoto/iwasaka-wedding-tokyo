@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState,useEffect } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image";
 
 const RequiredTag = () => (
@@ -134,7 +134,9 @@ const WeddingForm = () => {
       params.append("guestType", guestType)
 
       Object.entries(formData).forEach(([key, value]) => {
-        if (key !== "companions") params.append(key, value)
+        if (key !== "companions") {
+          params.append(key, String(value ?? "")) 
+        }
       })
 
       formData.companions.forEach((comp, i) => {
@@ -170,7 +172,6 @@ const WeddingForm = () => {
   }
 
   if (submitted) {
-    // ✅ 送信済みUI
     return (
       <section className="text-[#202F55] p-8 max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-thin mb-6">Wedding Invitation</h2>
@@ -329,7 +330,7 @@ const WeddingForm = () => {
                   />
                 </div>
                 <div className="mt-8">
-                <TextInput
+                  <TextInput
                     label="アレルギー"
                     placeholder={`連名${i + 1} アレルギー`}
                     value={comp.allergies}

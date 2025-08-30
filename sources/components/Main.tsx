@@ -23,7 +23,6 @@ export default function MainSection() {
       <div
         className="flex flex-col justify-center items-center px-4 pb-8"
         style={{
-          minHeight: "calc(var(--vh, 1vh) * 100)",
           minHeight: "100dvh",
         }}
       >
