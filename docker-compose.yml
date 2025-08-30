@@ -12,10 +12,6 @@ services:
       - type: volume
         source: host-app-node_modules
         target: /usr/src/app/node_modules
-      - type: bind
-        source: ./ssh
-        target: /root/.ssh
-        read_only: true  
     networks:
       - microfrontends
     command: ["npm", "run", "dev"]
