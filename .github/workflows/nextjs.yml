@@ -65,9 +65,9 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         working-directory: ./sources
 
-      - name: Export static site
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export
-        working-directory: ./sources
+      # - name: Export static site
+      #   run: ${{ steps.detect-package-manager.outputs.runner }} next export
+      #   working-directory: ./sources
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
