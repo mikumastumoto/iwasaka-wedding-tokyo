@@ -33,7 +33,7 @@ export default function Countdown() {
   }, []);
 
   return (
-    <section className="px-4 py-8">
+    <section className="px-4 py-18">
       <div className="relative text-center text-[#202f55] font-normal border border-[#202f55]">
         {/* タイトル */}
         <h3 className="relative -top-4 inline-block bg-[#fef8f2] px-4 text-[20px] font-normal">
