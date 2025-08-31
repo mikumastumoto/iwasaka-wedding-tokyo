@@ -5,8 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true, // GitHub Pages では必須
   },
-  basePath: "/iwasaka-wedding-tokyo", // ← GitHubリポジトリ名に合わせる
-  assetPrefix: '/iwasaka-wedding-tokyo/',
+  // basePath: "/iwasaka-wedding-tokyo",  // ドメイン設定に伴い一旦消してみる
+  // assetPrefix: '/iwasaka-wedding-tokyo/',
 };
 
 module.exports = nextConfig;
