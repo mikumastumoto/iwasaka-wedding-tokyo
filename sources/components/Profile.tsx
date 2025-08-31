@@ -64,7 +64,7 @@ export default function Profile() {
             </div>
 
             {/* プロフィール文 */}
-            <p className="text-sm leading-relaxed md:mt-4 mt-6 mx-auto w-fit">
+            <p className="text-sm leading-relaxed md:mt-4 mt-6 text-left mx-auto w-fit">
               1999年4月19日 / 兵庫県出身
               <br />
               旅行・コーヒーが好きです
