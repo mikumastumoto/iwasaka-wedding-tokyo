@@ -15,7 +15,7 @@ const Info = () => {
           <h3 className="text-2xl font-thin">Event</h3>
         </div>
         <div className="leading-relaxed font-thin">
-          <p>2025年11月23日(土)</p>
+          <p>2025年11月23日(日)</p>
           <p>受付開始 18:25~</p>
           <p>パーティー開始 18:45~</p>
         </div>
