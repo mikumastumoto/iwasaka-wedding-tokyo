@@ -39,7 +39,7 @@ const Info = () => {
         {/* 地図 */}
         <div className="max-w-2xl mx-auto my-8 px-2.5">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.383196924845!2d139.70428387635645!3d35.66759713023199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c9e1605051f%3A0x2984b553c3017a2!2sIWAI%20OMOTESANDO!5e0!3m2!1sja!2sjp!4v1724996911364!5m2!1sja!2sjp"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.454126200541!2d139.70572251149105!3d35.66581853070598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d45097b4ea9%3A0x3d721cafe1762672!2sIWAI%20OMOTESANDO!5e0!3m2!1sja!2sjp!4v1756616728298!5m2!1sja!2sjp"
             className="w-full h-[350px] border-0 rounded"
             allowFullScreen={false}
             loading="lazy"
