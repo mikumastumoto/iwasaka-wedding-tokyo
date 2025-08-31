@@ -212,6 +212,9 @@ const WeddingForm = () => {
       <h2 className="text-center text-4xl md:text-5xl font-thin mb-12 mt-8">
         Wedding Invitation
       </h2>
+      <section className="text-[#202F55] mb-8 mx-auto text-center">
+        <p className="text-lg">※2025年10月23日(土)までにご回答ください</p>
+      </section>
       <form onSubmit={handleSubmit}>
         <div className="space-y-10">
           {/* 新郎/新婦ゲスト選択 */}
