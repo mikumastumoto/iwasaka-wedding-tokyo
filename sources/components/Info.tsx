@@ -4,7 +4,6 @@ const Info = () => {
   return (
     // 背景色、文字色、フォント、中央寄せ、パディングを設定
     <div className="bg-[#202F55] text-[#FEF8F2] text-center px-5 py-16">
-      
       {/* メインタイトル */}
       <h2 className="text-5xl font-light tracking-wider mb-12 font-thin">
         Information
@@ -17,8 +16,8 @@ const Info = () => {
         </div>
         <div className="leading-relaxed font-thin">
           <p>2025年11月23日(土)</p>
-          <p>受付開始 hh:mm~</p>
-          <p>パーティー開始 hh:mm~</p>
+          <p>受付開始 18:25~</p>
+          <p>パーティー開始 18:45~</p>
         </div>
       </section>
 
@@ -27,18 +26,16 @@ const Info = () => {
         <div className="inline-block border border-[#FEF8F2] px-8 py-2 mb-6">
           <h3 className="text-2xl font-thin">Location</h3>
         </div>
-        <h4 className="text-2xl mt-4 mb-2.5 font-thin">
-          IWAI OMOTESANDO
-        </h4>
-        <a 
-          href="https://iwai.official-wedding.jp/map/" 
-          target="_blank" 
+        <h4 className="text-2xl mt-4 mb-2.5 font-thin">IWAI OMOTESANDO</h4>
+        <a
+          href="https://iwai.official-wedding.jp/map/"
+          target="_blank"
           rel="noopener noreferrer"
           className="text-sm no-underline hover:underline break-all"
         >
           https://iwai.official-wedding.jp/map/
         </a>
-        
+
         {/* 地図 */}
         <div className="max-w-2xl mx-auto my-8 px-2.5">
           <iframe
