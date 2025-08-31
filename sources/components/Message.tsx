@@ -5,7 +5,7 @@ const Message = () => {
     <section className="bg-[#202f55] w-full py-16 px-4">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
         {/* 左側の画像 */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 m-auto">
           <Image
             src="./images/message.JPEG"
             alt="bride"
