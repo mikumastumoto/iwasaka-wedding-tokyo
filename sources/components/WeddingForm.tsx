@@ -169,7 +169,7 @@ const WeddingForm = () => {
       });
 
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbyLygsBtkSpnQXVtW_gYAznXVH_4JyawPwETuOFhT6E3aZR6A52Ov9mnwtiJZ9MPtiq/exec",
+        "https://script.google.com/macros/s/AKfycbxJ9EobRc4QpFQJztg57i0VVwIIsKVzI9Ks0_6jJSX2iJwqmhUFE2EoE6V0-FfXz8Z5FQ/exec",
         {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
