@@ -71,7 +71,7 @@ const Info = () => {
           transition-all duration-1000 ease-out delay-200
           ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
         `}>
-          <p>2025年11月23日(土)</p>
+          <p>2025年11月23日(日)</p>
           <p>受付開始 18:25~</p>
           <p>パーティー開始 18:45~</p>
         </div>
