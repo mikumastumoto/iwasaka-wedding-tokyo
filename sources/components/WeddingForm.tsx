@@ -213,7 +213,7 @@ const WeddingForm = () => {
         Wedding Invitation
       </h2>
       <section className="text-[#202F55] mb-8 mx-auto text-center">
-        <p className="text-lg">※2025年10月23日(土)までにご回答ください</p>
+        <p className="text-lg">※2025年10月24日(金)までにご回答ください</p>
       </section>
       <form onSubmit={handleSubmit}>
         <div className="space-y-10">
