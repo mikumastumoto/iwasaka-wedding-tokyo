@@ -1,10 +1,38 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 export default function Profile() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect(); // 一度だけ発火
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="bg-[#202f55] text-white py-16 px-6">
-      <h2 className="text-center text-4xl font-thin mb-12">Profile</h2>
+    <section
+      ref={sectionRef}
+      className="bg-[#202f55] text-white py-16 px-6"
+    >
+      <h2
+        className={`text-center text-4xl font-thin mb-12 transform transition-all duration-1200 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+          }`}
+      >
+        Profile
+      </h2>
 
       <div className="flex flex-col md:flex-row justify-center items-start gap-16">
         {/* Groom */}
@@ -29,7 +57,10 @@ export default function Profile() {
             </div>
 
             {/* プロフィール文 */}
-            <p className="text-sm leading-relaxed md:mt-4 mt-6 text-left mx-auto w-fit">
+            <p
+              className={`text-sm leading-relaxed md:mt-4 mt-6 text-left mx-auto w-fit transform transition-all duration-1200 ease-out ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+                }`}
+            >
               1997年10月18日 / 茨城県出身埼玉県育ち
               <br />
               小さい頃からテニスをやっていました
@@ -64,7 +95,10 @@ export default function Profile() {
             </div>
 
             {/* プロフィール文 */}
-            <p className="text-sm leading-relaxed md:mt-4 mt-6 text-left mx-auto w-fit">
+            <p
+              className={`text-sm leading-relaxed md:mt-4 mt-6 text-left mx-auto w-fit transform transition-all duration-1200 ease-out ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+                }`}
+            >
               1999年4月19日 / 兵庫県出身
               <br />
               旅行・コーヒーが好きです

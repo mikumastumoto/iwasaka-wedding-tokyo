@@ -1,8 +1,41 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const Message = () => {
+  const [visible, setVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect(); // 一度だけ発火
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const texts = [
+    "謹啓",
+    "皆様におかれましては\nお健やかにお過ごしのこととお慶び申し上げます",
+    "さて 私たちは\nこのたび8月23日に\nハワイのセントラルユニオン・コートヤードにて\n結婚式を挙げてまいりました",
+    "つきましては 帰国後\n日ごろお世話になっている皆様にお集まりいただき\nささやかですが 結婚のご報告をかねて\n披露の場を設けたく存じます",
+    "ご多用中 誠に恐縮でございますが\nぜひご出席をいただきたく\nご案内申し上げます",
+    "謹白",
+  ];
+
   return (
-    <section className="bg-[#202f55] w-full py-16 px-4">
+    <section
+      ref={sectionRef}
+      className="bg-[#202f55] w-full py-16 px-4"
+    >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
         {/* 左側の画像 */}
         <div className="w-full md:w-1/2 m-auto">
@@ -17,38 +50,24 @@ const Message = () => {
 
         {/* 右側のテキスト */}
         <div className="w-full md:w-1/2 text-[#fef8f2] leading-relaxed text-center md:text-left">
-          <p className="mb-6 text-center">謹啓</p>
-          <p className="mb-4">
-            皆様におかれましては
-            <br />
-            お健やかにお過ごしのこととお慶び申し上げます
-          </p>
-          <p className="mb-4">
-            さて 私たちは
-            <br />
-            このたび8月23日に
-            <br />
-            ハワイのセントラルユニオン・コートヤードにて
-            <br />
-            結婚式を挙げてまいりました
-          </p>
-          <p className="mb-4">
-            つきましては 帰国後
-            <br />
-            日ごろお世話になっている皆様にお集まりいただき
-            <br />
-            ささやかですが 結婚のご報告をかねて
-            <br />
-            披露の場を設けたく存じます
-          </p>
-          <p className="mb-4">
-            ご多用中 誠に恐縮でございますが
-            <br />
-            ぜひご出席をいただきたく
-            <br />
-            ご案内申し上げます
-          </p>
-          <p className="mt-6 text-center">謹白</p>
+          {texts.map((text, i) => (
+            <p
+              key={i}
+              className={`mb-4 transform transition-all duration-700 ease-out ${
+                visible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
+              }`}
+              style={{ transitionDelay: `${i * 200}ms` }} // 順番に0.2秒ずつ遅らせる
+            >
+              {text.split("\n").map((line, idx) => (
+                <span key={idx}>
+                  {line}
+                  <br />
+                </span>
+              ))}
+            </p>
+          ))}
         </div>
       </div>
     </section>

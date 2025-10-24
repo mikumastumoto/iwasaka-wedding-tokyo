@@ -25,4 +25,19 @@
 
 .animate-swim {
   animation: swim 10s linear infinite;
+  animation-delay: 3.5s;
 }
+
+@keyframes fadeInOnce {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeInOnce {
+  animation: fadeInOnce 1.5s ease-out forwards;
+}
+
+/* 時差をつけるクラス */
+.delay-1 { animation-delay: 0.5s; transform: translateY(100vh);}
+.delay-2 { animation-delay: 1.5s; transform: translateY(100vh);}
+.delay-3 { animation-delay: 2.5s; transform: translateY(100vh);}

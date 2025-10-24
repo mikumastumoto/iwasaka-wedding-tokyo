@@ -26,29 +26,27 @@ export default function MainSection() {
           minHeight: "100dvh",
         }}
       >
-        <h1 className="font-serif text-[40px] text-center text-[#202f55]">
+        <h1 className="font-serif text-[40px] text-center text-[#202f55] animate-fadeInOnce  delay-1">
           Wedding Party Invitation
         </h1>
-        <p className="mx-auto w-4/5 text-black font-normal py-8 border-t border-b border-[#202f55] tracking-[14px] z-10 text-center mt-8 text-[#202f55]">
+        <p className="mx-auto w-4/5 text-black font-normal py-8 border-t border-b border-[#202f55] tracking-[14px] z-10 text-center mt-8 text-[#202f55] animate-fadeInOnce  delay-2">
           RIKU&nbsp; & &nbsp;MIKU
         </p>
       </div>
 
       {/* パーム画像 */}
-      {/* 768px以上: PC用 */}
       <Image
         src="./images/pc-palms.png"
         alt="palms"
-        className="hidden md:block absolute bottom-0 w-full object-contain"
+        className="hidden md:block absolute bottom-0 w-full object-contain animate-fadeInOnce  delay-3"
         width={0}
         height={0}
         sizes="100vw"
       />
-      {/* 768px未満: スマホ用 */}
       <Image
         src="./images/palms.png"
         alt="palms"
-        className="block md:hidden absolute bottom-0 w-full object-contain"
+        className="block md:hidden absolute bottom-0 w-full object-contain animate-fadeInOnce  delay-3"
         width={0}
         height={0}
         sizes="100vw"
@@ -61,7 +59,7 @@ export default function MainSection() {
             id="turtle"
             src="./images/honu.png"
             alt="honu"
-            className="absolute bottom-[50px] right-[-200px] w-[150px] animate-swim animate-wiggle"
+            className="absolute bottom-[50px] right-[-200px] w-[150px] animate-swim animate-wiggle animate-float"
             width={150}
             height={150}
           />
